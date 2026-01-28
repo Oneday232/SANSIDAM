@@ -536,9 +536,9 @@ main,
 /* ────────────────────────────────────────────────
    Responsive
 ───────────────────────────────────────────────── */
-@media (max-width: 540px) {
+@media (max-width: 425px) {
   html {
-    font-size: 62.5%;
+    font-size: 50%;
   }
 
 .hero .content h1 {
@@ -638,5 +638,6 @@ main,
     font-size: 4rem;
   }
 }
+
 
 
