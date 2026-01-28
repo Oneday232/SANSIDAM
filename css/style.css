@@ -221,13 +221,8 @@ main,
 }
 
 .hero .content h1 {
-  font-size: 3rem;
-
-  color: #fff;
-
-  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
-
-  line-height: 1.3;
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Responsif otomatis */
+  line-height: 1.2;
 }
 
 .hero .content h1 span {
@@ -924,6 +919,7 @@ main,
     display: none; /* Hilangkan garis bawah hover di mobile agar bersih */
   }
 }
+
 
 
 
