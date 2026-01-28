@@ -148,10 +148,17 @@ main,
 }
 
 .hero .content h1 {
-  font-size: 5rem;
+  font-size: 5rem; /* ukuran dasar */
   color: #fff;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   line-height: 1.3;
+
+  /* Tambahkan properti ini agar teks tidak mudah turun ke bawah */
+  white-space: nowrap; /* ← paling efektif: paksa tetap satu baris */
+
+  /* Alternatif jika ingin tetap wrap tapi kontrol lebih baik */
+  /* word-break: keep-all; */ /* jangan potong kata di tengah */
+  /* hyphens: none; */ /* matikan hyphenation otomatis */
 }
 
 .hero .content h1 span {
@@ -620,3 +627,4 @@ main,
     font-size: 4rem;
   }
 }
+
