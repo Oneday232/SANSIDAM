@@ -816,9 +816,23 @@ main,
 }
 
 /* Responsif Footer */
-@media (max-width: 1200px) {
-  html {
-    font-size: 65%; /* Menyesuaikan skala font */
+/* Untuk Laptop/Desktop */
+@media (min-width: 1024px) {
+  .hero .content h1 {
+    font-size: 3.5rem; /* Ukuran lebih kecil dan pas untuk laptop */
+    max-width: 800px;  /* Agar teks tidak memanjang sampai ujung layar */
+  }
+  
+  .hero .content p {
+    font-size: 1.4rem;
+    max-width: 600px;
+  }
+}
+
+/* Untuk Monitor Sangat Besar (Optional) */
+@media (min-width: 1440px) {
+  .hero .content h1 {
+    font-size: 4.5rem;
   }
 }
 @media (max-width: 768px) {
@@ -902,4 +916,5 @@ main,
     display: none; /* Hilangkan garis bawah hover di mobile agar bersih */
   }
 }
+
 
