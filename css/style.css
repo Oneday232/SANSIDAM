@@ -139,7 +139,7 @@ main,
   position: absolute;
   inset: auto 0 0 0;
   height: 30%;
-  background: linear-gradient(to top, rgba(1,1,1,0.95) 15%, transparent 50%);
+  background: linear-gradient(to top, rgba(1, 1, 1, 0.95) 15%, transparent 50%);
 }
 
 .hero .content {
@@ -170,7 +170,7 @@ main,
   margin-top: 0.5rem;
   line-height: 1.4;
   font-weight: 100;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   mix-blend-mode: difference;
 }
 
@@ -182,7 +182,7 @@ main,
   color: #fff;
   background-color: var(--primary);
   border-radius: 10rem;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* ────────────────────────────────────────────────
@@ -201,11 +201,11 @@ main,
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(1,1,1,0.9) 0%,
-    rgba(1,1,1,0.35) 30%,
-    rgba(1,1,1,0.15) 50%,
-    rgba(1,1,1,0.5) 80%,
-    rgba(1,1,1,0.9) 100%
+    rgba(1, 1, 1, 0.9) 0%,
+    rgba(1, 1, 1, 0.35) 30%,
+    rgba(1, 1, 1, 0.15) 50%,
+    rgba(1, 1, 1, 0.5) 80%,
+    rgba(1, 1, 1, 0.9) 100%
   );
   z-index: 1;
 }
@@ -379,7 +379,7 @@ main,
   max-width: 800px;
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .contact-container form {
@@ -416,7 +416,7 @@ main,
   outline: none;
   border-color: var(--primary);
   background: #fff;
-  box-shadow: 0 0 0 3px rgba(98,129,65,0.1);
+  box-shadow: 0 0 0 3px rgba(98, 129, 65, 0.1);
 }
 
 .btn-submit {
@@ -435,7 +435,7 @@ main,
 .btn-submit:hover {
   background: #4a6332;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* ────────────────────────────────────────────────
@@ -536,12 +536,12 @@ main,
 /* ────────────────────────────────────────────────
    Responsive
 ───────────────────────────────────────────────── */
-@media (max-width: 425px) {
+@media (max-width: 540px) {
   html {
-    font-size: 50%;
+    font-size: 55%;
   }
 
-.hero .content h1 {
+  .hero .content h1 {
     font-size: clamp(2.8rem, 10vw, 4.5rem); /* sesuaikan supaya muat */
     line-height: 1.1; /* agak rapat biar tidak terlalu tinggi */
     white-space: normal; /* izinkan wrap normal */
@@ -552,6 +552,22 @@ main,
     white-space: normal;
   }
   
+  .hero .content h1 span {
+    display: block; /* ← ini yang utama: span jadi elemen blok → pindah ke baris baru */
+    color: var(--primary);
+  }
+
+  /* Optional: kalau ingin spasi antar baris lebih longgar */
+  .hero .content h1 span + span {
+    margin-top: 0.2em; /* atau 0.4em kalau mau lebih renggang */
+  }
+
+  /* Kalau ingin efek lebih dramatis (misal huruf kapital + shadow lebih kuat) */
+  .hero .content h1 span {
+    text-transform: uppercase; /* optional */
+    letter-spacing: 1px; /* optional */
+  }
+
   #hamburger-menu {
     display: inline-block;
   }
@@ -565,7 +581,7 @@ main,
     height: 100vh;
     transition: right 0.5s ease;
     flex-direction: column;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   }
 
   .navbar-nav.active {
@@ -638,6 +654,3 @@ main,
     font-size: 4rem;
   }
 }
-
-
-
