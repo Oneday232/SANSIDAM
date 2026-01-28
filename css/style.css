@@ -816,7 +816,11 @@ main,
 }
 
 /* Responsif Footer */
-
+@media (max-width: 1200px) {
+  html {
+    font-size: 65%; /* Menyesuaikan skala font */
+  }
+}
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
@@ -898,3 +902,4 @@ main,
     display: none; /* Hilangkan garis bawah hover di mobile agar bersih */
   }
 }
+
