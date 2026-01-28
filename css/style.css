@@ -536,11 +536,22 @@ main,
 /* ────────────────────────────────────────────────
    Responsive
 ───────────────────────────────────────────────── */
-@media (max-width: 768px) {
+@media (max-width: 540px) {
   html {
     font-size: 62.5%;
   }
 
+.hero .content h1 {
+    font-size: clamp(2.8rem, 10vw, 4.5rem); /* sesuaikan supaya muat */
+    line-height: 1.1; /* agak rapat biar tidak terlalu tinggi */
+    white-space: normal; /* izinkan wrap normal */
+  }
+
+  .hero .content .p1 {
+    font-size: 100%; /* sesuaikan supaya muat */
+    white-space: normal;
+  }
+  
   #hamburger-menu {
     display: inline-block;
   }
@@ -627,4 +638,5 @@ main,
     font-size: 4rem;
   }
 }
+
 
