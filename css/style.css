@@ -221,7 +221,7 @@ main,
 }
 
 .hero .content h1 {
-  font-size: 5rem;
+  font-size: 3rem;
 
   color: #fff;
 
@@ -924,6 +924,7 @@ main,
     display: none; /* Hilangkan garis bawah hover di mobile agar bersih */
   }
 }
+
 
 
 
