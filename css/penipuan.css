@@ -1,0 +1,241 @@
+/* FILE: detail.css
+    KEGUNAAN: Mengatur tampilan halaman detail artikel (Phishing, Penipuan Online, AI).
+    TEMA: Dark Modern (Hitam & Hijau Army)
+*/
+
+:root {
+  --primary: #628141; /* Hijau Army sesuai permintaan */
+  --dark: #2c3e50;
+  --light: #010101; /* Hitam Pekat untuk latar */
+  --text: #ffffff; /* Teks Putih agar kontras */
+  --card-bg: #111111; /* Abu-abu sangat gelap untuk kotak konten */
+  --accent: #e74c3c; /* Merah untuk indikasi bahaya/palsu */
+  --success: #2ecc71; /* Hijau terang untuk indikasi resmi/aman */
+}
+
+/* Reset Dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Tahoma, sans-serif;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--text);
+  overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+}
+
+/* --- Layout Utama (3 Kolom) --- */
+.full-page-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Kolom Samping (Banner Kiri & Kanan) */
+.side-banner {
+  flex: 1;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  min-width: 250px; /* TAMBAHKAN INI: Agar kolom punya lebar minimal */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-blend-mode: overlay; -> Hapus ini jika gambar masih gelap/hilang */
+  z-index: 1;
+}
+
+/* Kontainer Utama (Tengah) */
+.container {
+  flex: 2; /* Lebar konten utama lebih besar dari samping */
+  max-width: 900px;
+  padding: 40px 60px;
+  background-color: var(--light);
+  z-index: 2;
+}
+
+/* --- Navigasi & Header --- */
+.back-link {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+}
+
+.back-link:hover {
+  color: #8fb365; /* Warna hijau lebih terang saat disentuh */
+  transform: translateX(-5px);
+}
+
+.badge {
+  background: var(--primary);
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.hero-img-container {
+  width: 100%;
+  border: 2px solid var(--primary);
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.main-img {
+  width: 100%;
+  display: block;
+}
+
+/* --- Isi Artikel --- */
+.intro-card {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  border-left: 5px solid var(--primary);
+}
+
+.grid-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.info-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+}
+
+.info-card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.info-card ul {
+  list-style: none;
+}
+
+.info-card li {
+  margin-bottom: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.info-card li::before {
+  content: "•";
+  color: var(--primary);
+  position: absolute;
+  left: 0;
+}
+
+/* --- Box Bedah Kasus --- */
+.example-box {
+  background: #151515;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 30px;
+  margin: 40px 0;
+}
+
+.example-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.url-comparison {
+  background: #000;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  border: 1px solid #222;
+}
+
+.url-item {
+  font-family: "Courier New", monospace;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.real {
+  color: var(--success);
+}
+.fake {
+  color: var(--accent);
+}
+
+/* --- Langkah Perlindungan --- */
+.tips-section h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}
+
+.step:hover {
+  background: #1c1c1c;
+}
+
+.number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  /* opacity: 0.3; */
+}
+
+/* --- Pengaturan Responsif (HP) --- */
+@media (max-width: 1024px) {
+  .side-banner {
+    display: none; /* Sembunyikan banner samping di tablet/HP agar tidak sempit */
+  }
+  .container {
+    flex: 1;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-detail {
+    grid-template-columns: 1fr; /* Grid jadi 1 kolom di HP */
+  }
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .step {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
