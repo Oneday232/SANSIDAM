@@ -832,21 +832,6 @@ main,
 }
 
 /* Pengaturan untuk Layar Sangat Lebar (Monitor Besar) */
-@media (min-width: 1440px) {
-  .hero .content h1 {
-    font-size: 4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-
-    gap: 30px;
-
-    text-align: center;
-  }
-
   .footer-logo p {
     margin: 0 auto;
   }
@@ -879,6 +864,8 @@ main,
 /* Media Queris */
 
 /* Tablet & Mobile */
+
+
 @media (max-width: 768px) {
   html {
     font-size: 62.5%; /* Menyesuaikan skala font */
@@ -917,6 +904,24 @@ main,
 
   .navbar .navbar-nav a::after {
     display: none; /* Hilangkan garis bawah hover di mobile agar bersih */
+  }
+}
+
+@media (min-width: 768px) {
+  .hero .content h1 {
+    font-size: 62.5%; /* Ukuran ini lebih ideal untuk laptop */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero .content p {
+    font-size: 1.2rem;
+    max-width: 600px; /* Supaya teks deskripsi tidak terlalu lebar ke samping */
+    margin: 0 auto 2rem; /* Mengetengahkan teks deskripsi */
+  }
+
+  .hero .content {
+    max-width: 800px; /* Membatasi lebar area konten agar rapi di tengah */
   }
 }
 
