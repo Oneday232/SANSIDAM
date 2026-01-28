@@ -1,0 +1,136 @@
+:root {
+    --primary: #628141; /* Hijau Army */
+    --bg-dark: #010101; 
+    --text-dark: #2d3436;
+    --text-gray: #636e72;
+}
+
+body {
+    margin: 0;
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+}
+
+.full-page-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Banner Samping Tetap Ada */
+.side-banner {
+    flex: 1;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+}
+
+.container {
+    flex: 2;
+    max-width: 900px;
+    padding: 40px 20px;
+    z-index: 2;
+}
+
+/* KOTAK PUTIH TENGAH */
+.white-paper {
+    /* background: #ffffff; */
+    color: var(--text-dark);
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    line-height: 1.8;
+}
+
+.btn-back {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.category-tag {
+    color: var(--primary);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 15px 0;
+    color: #ffffff;
+}
+
+.highlight { color: var(--primary); }
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin: 30px 0 15px;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+}
+
+p {
+    color: #ffffff;
+}
+
+.example-box {
+    /* background: #f8f9fa; */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid var(--primary);
+}
+
+
+.example-box h4 {
+    /* color: var(--primary); */
+    color: red;
+    margin-bottom: 10px;
+}
+
+.protection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.p-item {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.strong {
+    color: red;
+}
+
+/* Gambar Samping (Contoh AI) */
+.left-banner-ai { background-image: url('/img/edukasi/AI.jpeg'); }
+.right-banner-ai { background-image: url('/img/edukasi/AI.jpeg'); }
+
+@media (max-width: 1024px) {
+    .side-banner { display: none; }
+    .white-paper { padding: 40px 25px; }
+}
