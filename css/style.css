@@ -111,11 +111,17 @@ main,
   inset: auto 0 0 0;
   height: 30%;
   background: linear-gradient(to top, rgba(1, 1, 1, 0.95) 15%, transparent 50%);
+  /* TAMBAHKAN INI: Agar klik 'menembus' lapisan gradient */
+  pointer-events: none; 
+  z-index: 1;
 }
 
 .hero .content {
   padding: 1.4rem 3%;
   width: 100%;
+  /* TAMBAHKAN INI: Agar konten berada di depan gradient */
+  position: relative;
+  z-index: 2;
 }
 
 .hero .content h1 {
@@ -149,6 +155,10 @@ main,
   background-color: var(--primary);
   border-radius: 10rem;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  /* TAMBAHKAN INI: Memastikan elemen ini paling depan dan bisa diklik */
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
 }
 
 /* ────────────────────────────────────────────────
@@ -572,3 +582,4 @@ main,
     text-indent: 10%;
   }
 }
+
