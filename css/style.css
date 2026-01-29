@@ -221,13 +221,6 @@ main,
   width: 100%; /* Pastikan baris mengambil lebar penuh */
 }
 
-.about-img img {
-  /* Diubah dari 10% ke 40% agar logo terlihat jelas di semua layar */
-  width: 40%;
-  max-width: 250px; /* Batas maksimal agar tidak terlalu besar di laptop */
-  height: auto;
-  margin-bottom: 2rem;
-}
 
 .about .content {
   width: 100%; /* Hindari penggunaan rem kaku seperti 45rem agar tidak meluber */
@@ -594,4 +587,5 @@ main,
     text-indent: 10%;
   }
 }
+
 
