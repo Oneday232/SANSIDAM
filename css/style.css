@@ -70,7 +70,7 @@ main,
 }
 
 .navbar .navbar-nav a {
-  color: #000000;
+  color: #fff;
   display: inline-block;
   font-size: 1.3rem;
   margin: 0 1rem;
@@ -594,3 +594,4 @@ main,
     text-indent: 10%;
   }
 }
+
