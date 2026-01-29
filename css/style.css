@@ -145,22 +145,6 @@ main,
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   mix-blend-mode: difference;
 }
-
-.cta {
-  margin-top: 1rem;
-  display: inline-block;
-  padding: 1rem 3rem;
-  font-size: 1.4rem;
-  color: #fff;
-  background-color: var(--primary);
-  border-radius: 10rem;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  /* TAMBAHKAN INI: Memastikan elemen ini paling depan dan bisa diklik */
-  position: relative;
-  z-index: 3;
-  cursor: pointer;
-}
-
 /* ────────────────────────────────────────────────
    About Section
 ───────────────────────────────────────────────── */
@@ -582,4 +566,5 @@ main,
     text-indent: 10%;
   }
 }
+
 
