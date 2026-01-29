@@ -44,7 +44,7 @@ main,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.4rem 7%;
+  padding: 1.4rem 7%; /* Menggunakan % agar fleksibel */
   background-color: rgba(1, 1, 1, 0.8);
   border-bottom: 1px solid var(--primary);
   position: fixed;
@@ -67,7 +67,6 @@ main,
 
 .navbar-nav a {
   color: #fff;
-  display: inline-block;
   font-size: 1.3rem;
   margin: 0 1rem;
 }
@@ -76,37 +75,10 @@ main,
   color: var(--primary);
 }
 
-.navbar-nav a::after {
-  content: "";
-  display: block;
-  padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid var(--primary);
-  transform: scaleX(0);
-  transition: transform 0.2s linear;
-}
-
-.navbar-nav a:hover::after {
-  transform: scaleX(0.5);
-}
-
-.navbar-extra a {
-  color: #fff;
-  margin: 0 0.5rem;
-}
-
-.navbar-extra a:hover {
-  color: var(--primary);
-}
-
-#hamburger-menu {
-  display: none;
-}
-
-/* Logo kecil di navbar */
-#logo-kecil-link {
+.navbar-extra {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
 }
 
 .logo-kecil-img {
@@ -115,14 +87,12 @@ main,
   object-fit: contain;
   border-radius: 50%;
   border: 1.5px solid var(--primary);
-  transition: all 0.3s;
 }
 
-.logo-kecil-img:hover {
-  transform: scale(1.1);
-  border-color: #fff;
+#hamburger-menu {
+  display: none;
+  color: #fff;
 }
-
 /* ────────────────────────────────────────────────
    Hero Section
 ───────────────────────────────────────────────── */
@@ -132,6 +102,7 @@ main,
   align-items: center;
   background: url(../img/bg.jpg) center/cover no-repeat;
   position: relative;
+  padding: 0 5%;
 }
 
 .hero::after {
@@ -143,22 +114,17 @@ main,
 }
 
 .hero .content {
-  padding: 1.4rem 7%;
-  max-width: 120rem;
+  padding: 1.4rem 3%;
+  width: 100%;
 }
 
 .hero .content h1 {
-  font-size: 5rem; /* ukuran dasar */
+  /* clamp: min 2rem, fleksibel 6vw, max 4.5rem */
+  font-size: clamp(2rem, 6vw + 1rem, 4.5rem);
   color: #fff;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-  line-height: 1.3;
-
-  /* Tambahkan properti ini agar teks tidak mudah turun ke bawah */
-  white-space: nowrap; /* ← paling efektif: paksa tetap satu baris */
-
-  /* Alternatif jika ingin tetap wrap tapi kontrol lebih baik */
-  /* word-break: keep-all; */ /* jangan potong kata di tengah */
-  /* hyphens: none; */ /* matikan hyphenation otomatis */
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  /* background-color: white */
 }
 
 .hero .content h1 span {
@@ -169,7 +135,7 @@ main,
   font-size: 1.6rem;
   margin-top: 0.5rem;
   line-height: 1.4;
-  font-weight: 100;
+  font-weight: 50;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   mix-blend-mode: difference;
 }
@@ -189,7 +155,7 @@ main,
    About Section
 ───────────────────────────────────────────────── */
 .about {
-  padding: 100px 7% 1.4rem;
+  padding: 100px 7% 20rem;
   background: url(../img/bg-about.jpg) center/cover no-repeat;
   position: relative;
   overflow: hidden;
@@ -227,46 +193,46 @@ main,
 
 .about .row {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Tetap kolom untuk semua layar agar tidak terpotong */
   align-items: center;
   text-align: center;
+  width: 100%; /* Pastikan baris mengambil lebar penuh */
 }
 
 .about-img img {
-  width: 10%;
+  /* Diubah dari 10% ke 40% agar logo terlihat jelas di semua layar */
+  width: 40%; 
+  max-width: 250px; /* Batas maksimal agar tidak terlalu besar di laptop */
+  height: auto;
+  margin-bottom: 2rem;
 }
 
 .about .content {
-  flex: 1 1 45rem;
-  padding: 0 1rem;
+  width: 100%; /* Hindari penggunaan rem kaku seperti 45rem agar tidak meluber */
+  padding: 0 5%; /* Memberi ruang aman di sisi kiri dan kanan */
 }
 
 .about .content h3 {
-  font-size: 5rem;
-  margin-bottom: 1rem;
+  /* Menggunakan vw agar judul mengecil di HP */
+  font-size: 4vw; 
+  margin-bottom: 10rem;
+  color: var(--primary);
 }
 
-.about .content p {
-  margin-bottom: 0.8rem;
-  font-size: 2rem;
-  font-weight: 100;
-  line-height: 1.6;
-}
-
+/* Khusus Teks Paragraf p2 */
 .p2 {
   text-align: justify;
-  text-indent: 50px;
-}
-
-.about .content span {
-  color: var(--primary);
+  /* Font size menggunakan vw untuk HP, dibatasi media query untuk laptop */
+  font-size: 4vw; 
+  line-height: 1.6;
+  text-indent: 8%; /* Indentasi fleksibel dalam persen */
 }
 
 /* ────────────────────────────────────────────────
    Education Section
 ───────────────────────────────────────────────── */
 .education {
-  padding: 100px 7% 5rem;
+  padding: 100px 7% 15rem;
 }
 
 .education h2 {
@@ -439,7 +405,7 @@ main,
 }
 
 /* ────────────────────────────────────────────────
-   Footer
+   Footer (Responsive Fix)
 ───────────────────────────────────────────────── */
 .main-footer {
   background: #050505;
@@ -450,9 +416,17 @@ main,
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 50px;
+  /* Kolom otomatis: minimal 200px, maksimal mengisi ruang yang ada */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 40px;
   margin-bottom: 50px;
+}
+
+/* Khusus untuk Laptop (Layar lebar), logo kita buat lebih lebar dari kolom lain */
+@media (min-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
 }
 
 .footer-logo h2 {
@@ -468,7 +442,24 @@ main,
 .footer-logo p {
   color: #888;
   line-height: 1.6;
-  max-width: 300px;
+  width: 100%; /* Agar mengikuti lebar kolom */
+  max-width: 350px;
+}
+
+/* Perbaikan untuk HP agar teks ke tengah saat kolom bertumpuk */
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: center; /* Teks rata tengah di HP */
+    justify-items: center; /* Elemen di dalam grid ke tengah */
+  }
+
+  .footer-logo p {
+    margin: 0 auto; /* Mengetengahkan paragraf logo */
+  }
+
+  .social-icons {
+    justify-content: center; /* Mengetengahkan ikon sosmed di HP */
+  }
 }
 
 .footer-links h4,
@@ -488,7 +479,7 @@ main,
 
 .footer-links a {
   color: #888;
-  text-decoration: none;
+  font-size: 1.4rem; /* Memperbesar sedikit link di HP agar mudah di-klik */
   transition: all 0.3s;
 }
 
@@ -515,144 +506,69 @@ main,
   transition: all 0.3s;
 }
 
-.social-icons a:hover {
-  background: var(--primary);
-  border-color: var(--primary);
-  transform: translateY(-3px);
-}
-
 .footer-bottom {
   text-align: center;
   padding-top: 30px;
   border-top: 1px solid #111;
-  color: #444;
-  font-size: 0.85rem;
-}
-
-.footer-bottom p {
-  margin: 0;
+  color: #666; /* Warna sedikit lebih terang agar terbaca */
+  font-size: 1.1rem;
 }
 
 /* ────────────────────────────────────────────────
-   Responsive
+   Responsive Menu (Mobile)
 ───────────────────────────────────────────────── */
+@media (min-width: 1024px) {
+  .p2 {
+    font-size: 1.5rem; /* Kembali ke ukuran standar di laptop agar nyaman dibaca */
+    text-indent: 50px; /* Indentasi tetap di layar besar */
+  }
+}
+
+/* Batasan agar di layar HP sangat kecil huruf tidak terlalu mikro */
+@media (max-width: 480px) {
+  .p2 {
+    font-size: 4.5vw; /* Sedikit lebih besar di HP agar terbaca */
+    text-indent: 5%;
+  }
+}
+
+
 @media (max-width: 768px) {
-  html {
-    font-size: 55%;
+  #hamburger-menu {
+    display: block;
   }
 
-  .hero .content h1 {
-    font-size: clamp(2.8rem, 10vw, 4.5rem); /* sesuaikan supaya muat */
-    line-height: 1.1; /* agak rapat biar tidak terlalu tinggi */
-    white-space: normal; /* izinkan wrap normal */
-  }
 
-  .hero .content .p1 {
-    font-size: 100%; /* sesuaikan supaya muat */
-    white-space: normal;
+  .about .content h3 {
+    font-size: 4rem; /* Kembali ke satuan tetap di layar lebar agar tidak raksasa */
   }
   
-  .hero .content h1 span {
-    display: block; /* ← ini yang utama: span jadi elemen blok → pindah ke baris baru */
-    color: var(--primary);
+  .p2 {
+    font-size: 1.6rem; /* Ukuran standar yang nyaman dibaca di monitor */
+    text-indent: 50px;
   }
-
-  /* Optional: kalau ingin spasi antar baris lebih longgar */
-  .hero .content h1 span + span {
-    margin-top: 0.2em; /* atau 0.4em kalau mau lebih renggang */
-  }
-
-  /* Kalau ingin efek lebih dramatis (misal huruf kapital + shadow lebih kuat) */
-  .hero .content h1 span {
-    text-transform: uppercase; /* optional */
-    letter-spacing: 1px; /* optional */
-  }
-
-  #hamburger-menu {
-    display: inline-block;
-  }
-
   .navbar-nav {
     position: absolute;
     top: 100%;
     right: -100%;
     background: #fff;
-    width: 30rem;
+    width: 280px;
     height: 100vh;
-    transition: right 0.5s ease;
+    transition: 0.3s;
+    display: flex;
     flex-direction: column;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   }
 
   .navbar-nav.active {
     right: 0;
   }
-
   .navbar-nav a {
-    color: var(--bg);
-    margin: 1.5rem;
-    padding: 0.5rem;
-    font-size: 2rem;
+    color: #010101;
+    padding: 1.5rem;
     border-bottom: 1px solid #eee;
   }
-
-  .navbar-nav a::after {
-    display: none;
-  }
-
-  .logo-kecil-img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .education-card {
-    flex: 1 1 100%;
-  }
-
-  .education-card-p {
-    min-height: auto;
-  }
-
-  .contact {
-    padding: 50px 5%;
-  }
-
-  .contact-container {
-    padding: 25px;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .footer-social .social-icons {
-    justify-content: center;
+  .p2 {
+    font-size: 4.5vw; /* Sedikit lebih besar di HP agar terbaca */
+    text-indent: 10%;
   }
 }
-
-@media (min-width: 1024px) {
-  .hero .content {
-    max-width: 800px;
-  }
-
-  .hero .content h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-  }
-
-  .hero .content p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-  }
-}
-
-@media (min-width: 1440px) {
-  .hero .content h1 {
-    font-size: 4rem;
-  }
-}
-
-
